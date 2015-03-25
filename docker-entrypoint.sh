@@ -17,6 +17,6 @@ if [ ! -e .htaccess ]; then
   EOF
 fi
 
-chown -R www-data:www-data .
+# chown -R www-data:www-data .
 
 exec "$@"
