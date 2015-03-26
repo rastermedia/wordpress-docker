@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev && rm -rf /var
   && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
   && docker-php-ext-install gd
 RUN docker-php-ext-install mysqli
+RUN echo "upload_max_filesize = 10M\npost_max_size = 10M\n" >> /usr/local/etc/php/conf.d/filesize.ini
 
 VOLUME /var/www/html
 
