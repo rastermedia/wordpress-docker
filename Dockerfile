@@ -10,8 +10,8 @@ RUN docker-php-ext-install mysqli
 
 VOLUME /var/www/html
 
-COPY docker-entrypoint.sh /start.sh
+COPY docker-entrypoint.sh /entrypoint.sh
 COPY upload-size.ini /usr/local/etc/php/conf.d/upload-size.ini
 
-
-CMD ["/start.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["apache2-foreground"]
