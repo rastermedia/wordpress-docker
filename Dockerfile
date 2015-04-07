@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 
 VOLUME /var/www/html
 
+COPY vhost.conf /etc/apache2/sites-enabled/000-default.conf
+
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY upload-size.ini /etc/php5/mods-available/upload-size.ini
 
