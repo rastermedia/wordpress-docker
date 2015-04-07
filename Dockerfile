@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
   php5-curl \
   php5-mcrypt \
   && php5enmod mcrypt \
-  && a2enmod rewrite
+  && a2enmod rewrite \
+  && a2enmod headers
 
 VOLUME /var/www/html
 
