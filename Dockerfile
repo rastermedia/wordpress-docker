@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y php5-gd php5-mysql php5-mcrypt && \
   rm -rf /var/lib/apt/lists/* 
   
 RUN php5enmod mcrypt
+RUN cp /etc/php5/mods-available/* /usr/local/etc/php/conf.d/
 VOLUME /var/www/html
 
 COPY docker-entrypoint.sh /entrypoint.sh
